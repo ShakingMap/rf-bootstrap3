@@ -10,7 +10,8 @@ import {
     File,
     Textarea,
     CheckboxGroup,
-    Date as DateField
+    Date as DateField,
+    DatetimeLocal
 } from '../lib';
 
 class TestPage extends React.Component {
@@ -22,6 +23,7 @@ class TestPage extends React.Component {
             file: null,
             textarea: null,
             datefield: null,
+            datetimeLocal: null,
             checkboxGroup: null
         }
     }
@@ -99,6 +101,21 @@ class TestPage extends React.Component {
                     validationState: 'error',
                     value: this.state.datefield,
                     onChange: (value)=>this.setState({datefield: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
+                }}/>
+            </Wrapper>
+            <Wrapper {...{
+                label: 'Datetime Local',
+                validationState: 'success',
+                validationMessage: 'ok',
+                id: 'datetime-local-field'
+            }}>
+                <DatetimeLocal {...{
+                    id: 'datetime-local-field',
+                    validationState: 'error',
+                    value: this.state.datetimeLocal,
+                    onChange: (value)=>this.setState({datetimeLocal: value})
                     //value: undefined,
                     //onChange: (value)=>console.log(value)
                 }}/>

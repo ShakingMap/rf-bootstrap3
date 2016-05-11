@@ -15,7 +15,7 @@ const defaultProps = {
     onChange(){}
 };
 
-class DateField extends React.Component {
+class DatetimeLocal extends React.Component {
     render() {
         let {id, validationState, value, onChange, readOnly, disabled, ...otherProps} = this.props;
 
@@ -25,7 +25,7 @@ class DateField extends React.Component {
             <input
                 id={id}
                 className="form-control"
-                type="date"
+                type="datetime-local"
                 value={value}
                 onChange={e=>onChange(e.target.value, e)}
                 readOnly={readOnly}
@@ -36,8 +36,7 @@ class DateField extends React.Component {
     }
 }
 
-DateField.propTypes = propTypes;
-DateField.defaultProps = defaultProps;
-DateField.displayName = 'Date';
+DatetimeLocal.propTypes = propTypes;
+DatetimeLocal.defaultProps = defaultProps;
 
-export default DateField;
+export default DatetimeLocal;

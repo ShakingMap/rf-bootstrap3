@@ -5,6 +5,7 @@ export const File = require('./File').default;
 export const Textarea = require('./Textarea').default;
 export const CheckboxGroup = require('./CheckboxGroup').default;
 export const Date = require('./Date').default;
+export const DatetimeLocal = require('./DatetimeLocal').default;
 
 export default {
     Wrapper,
@@ -13,5 +14,6 @@ export default {
     File,
     Textarea,
     CheckboxGroup,
-    Date
+    Date,
+    DatetimeLocal
 }
