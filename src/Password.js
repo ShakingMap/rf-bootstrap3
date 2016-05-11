@@ -36,6 +36,7 @@ class Password extends React.Component {
             display,
             ...otherProps} = this.props;
 
+        if (value === null) value = '';
         display = display || this.state.display;
 
         return <div className={"form-group"+(validationState ? (' has-'+validationState):'')}>

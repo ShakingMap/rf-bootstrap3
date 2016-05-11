@@ -23,7 +23,8 @@ class Text extends React.Component {
     }
 
     render() {
-        const {label, validationState, validationMessage, value, onChange, readOnly, disabled, ...otherProps} = this.props;
+        let {label, validationState, validationMessage, value, onChange, readOnly, disabled, ...otherProps} = this.props;
+        if (value === null) value = '';
 
         return <div className={"form-group"+(validationState ? (' has-'+validationState):'')}>
             {label ? <label className="control-label" htmlFor={this.getId()}>{label}</label> : null}

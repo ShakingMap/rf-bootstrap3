@@ -14,8 +14,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-    onChange(){},
-    value: {path: ''}
+    onChange(){}
 };
 
 class Text extends React.Component {
@@ -24,7 +23,9 @@ class Text extends React.Component {
     }
 
     render() {
-        const {label, validationState, validationMessage, value, onChange, readOnly, disabled, ...otherProps} = this.props;
+        let {label, validationState, validationMessage, value, onChange, readOnly, disabled, ...otherProps} = this.props;
+        if (value === undefined) value = {path: undefined};
+        if (value === null) value = {path: ''};
 
         return <div className={"form-group"+(validationState ? (' has-'+validationState):'')}>
             {label ? <label className="control-label" htmlFor={this.getId()}>{label}</label> : null}
