@@ -9,7 +9,8 @@ import {
     Password,
     File,
     Textarea,
-    CheckboxGroup
+    CheckboxGroup,
+    Date as DateField
 } from '../lib';
 
 class TestPage extends React.Component {
@@ -20,6 +21,7 @@ class TestPage extends React.Component {
             password: null,
             file: null,
             textarea: null,
+            datefield: null,
             checkboxGroup: null
         }
     }
@@ -82,6 +84,21 @@ class TestPage extends React.Component {
                     validationState: 'error',
                     value: this.state.file,
                     onChange: (value)=>this.setState({file: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
+                }}/>
+            </Wrapper>
+            <Wrapper {...{
+                label: 'Date',
+                validationState: 'success',
+                validationMessage: 'ok',
+                id: 'date-field'
+            }}>
+                <DateField {...{
+                    id: 'date-field',
+                    validationState: 'error',
+                    value: this.state.datefield,
+                    onChange: (value)=>this.setState({datefield: value})
                     //value: undefined,
                     //onChange: (value)=>console.log(value)
                 }}/>
