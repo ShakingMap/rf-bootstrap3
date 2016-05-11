@@ -7,7 +7,8 @@ import {
     Text,
     Password,
     File,
-    Textarea
+    Textarea,
+    CheckboxGroup
 } from '../lib';
 
 class TestPage extends React.Component {
@@ -17,7 +18,8 @@ class TestPage extends React.Component {
             text: null,
             password: null,
             file: null,
-            textarea: null
+            textarea: null,
+            checkboxGroup: null
         }
     }
 
@@ -50,6 +52,14 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 value: this.state.textarea,
                 onChange: (value)=>this.setState({textarea: value})
+            }}/>
+            <CheckboxGroup {...{
+                label: 'Checkbox Group',
+                validationState: 'success',
+                validationMessage: 'ok',
+                value: this.state.checkboxGroup,
+                onChange: (value)=>{console.log(value);this.setState({checkboxGroup: value})},
+                items: {a: {label: 'A'}, b: {label:'B'}, c:{label: 'C', disabled: true}, d:{label: 'D', readOnly: true}}
             }}/>
         </div>
     }
