@@ -1,10 +1,8 @@
 import React from 'react';
-import nid from 'nid';
 
 const propTypes = {
-    label: React.PropTypes.string,
+    id: React.PropTypes.string,
     validationState: React.PropTypes.any,
-    validationMessage: React.PropTypes.string,
     value: React.PropTypes.object, // {path, file, files}
     onChange: React.PropTypes.func,
     readOnly: React.PropTypes.bool,
@@ -17,20 +15,16 @@ const defaultProps = {
     onChange(){}
 };
 
-class Text extends React.Component {
-    componentWillMount() {
-        this.id = nid();
-    }
-
+class File extends React.Component {
     render() {
-        let {label, validationState, validationMessage, value, onChange, readOnly, disabled, ...otherProps} = this.props;
+        let {id, validationState, value, onChange, readOnly, disabled, ...otherProps} = this.props;
+
         if (value === undefined) value = {path: undefined};
         if (value === null) value = {path: ''};
 
-        return <div className={"form-group"+(validationState ? (' has-'+validationState):'')}>
-            {label ? <label className="control-label" htmlFor={this.id}>{label}</label> : null}
+        return <div className={validationState ? ('has-'+validationState):''}>
             <input
-                id={this.id}
+                id={id}
                 type="file"
                 value={value.path}
                 onChange={e=>onChange({path:e.target.value, file:e.target.files[0], files: e.target.files}, e)}
@@ -38,12 +32,11 @@ class Text extends React.Component {
                 disabled={disabled}
                 {...otherProps}
             />
-            {validationMessage ? <span className="help-block">{validationMessage}</span> : null}
         </div>
     }
 }
 
-Text.propTypes = propTypes;
-Text.defaultProps = defaultProps;
+File.propTypes = propTypes;
+File.defaultProps = defaultProps;
 
-export default Text;
+export default File;

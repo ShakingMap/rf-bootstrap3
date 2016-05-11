@@ -71,6 +71,21 @@ class TestPage extends React.Component {
                     //onChange: (value)=>console.log(value)
                 }}/>
             </Wrapper>
+            <Wrapper {...{
+                label: 'File',
+                validationState: 'success',
+                validationMessage: 'ok',
+                id: 'file-field'
+            }}>
+                <File {...{
+                    id: 'file-field',
+                    validationState: 'error',
+                    value: this.state.file,
+                    onChange: (value)=>this.setState({file: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
+                }}/>
+            </Wrapper>
         </div>
     }
 }
