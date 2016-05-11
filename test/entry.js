@@ -11,7 +11,8 @@ import {
     Textarea,
     CheckboxGroup,
     Date as DateField,
-    DatetimeLocal
+    DatetimeLocal,
+    Number as NumberField
 } from '../lib';
 
 class TestPage extends React.Component {
@@ -24,6 +25,7 @@ class TestPage extends React.Component {
             textarea: null,
             datefield: null,
             datetimeLocal: null,
+            number: null,
             checkboxGroup: null
         }
     }
@@ -120,6 +122,22 @@ class TestPage extends React.Component {
                     //onChange: (value)=>console.log(value)
                 }}/>
             </Wrapper>
+            <Wrapper {...{
+                label: 'Number',
+                validationState: 'success',
+                validationMessage: 'ok',
+                id: 'number-field'
+            }}>
+                <NumberField {...{
+                    id: 'number-field',
+                    validationState: 'error',
+                    value: this.state.number,
+                    onChange: (value)=>this.setState({number: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
+                }}/>
+            </Wrapper>
+
         </div>
     }
 }

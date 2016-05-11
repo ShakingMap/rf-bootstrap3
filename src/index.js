@@ -6,6 +6,7 @@ export const Textarea = require('./Textarea').default;
 export const CheckboxGroup = require('./CheckboxGroup').default;
 export const Date = require('./Date').default;
 export const DatetimeLocal = require('./DatetimeLocal').default;
+export const Number = require('./Number').default;
 
 export default {
     Wrapper,
@@ -15,5 +16,6 @@ export default {
     Textarea,
     CheckboxGroup,
     Date,
-    DatetimeLocal
+    DatetimeLocal,
+    Number
 }
