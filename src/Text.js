@@ -1,9 +1,8 @@
 import React from 'react';
-import nid from 'nid';
 
 const propTypes = {
-    validationState: React.PropTypes.any,
     id: React.PropTypes.string,
+    validationState: React.PropTypes.any,
     value: React.PropTypes.string,
     onChange: React.PropTypes.func,
     readOnly: React.PropTypes.bool,
@@ -18,7 +17,7 @@ const defaultProps = {
 
 class Text extends React.Component {
     render() {
-        let {validationState, id, value, onChange, readOnly, disabled, ...otherProps} = this.props;
+        let {id, validationState, value, onChange, readOnly, disabled, ...otherProps} = this.props;
 
         if (value === null) value = '';
 

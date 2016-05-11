@@ -41,6 +41,21 @@ class TestPage extends React.Component {
                     //onChange: (value)=>console.log(value)
                 }}/>
             </Wrapper>
+            <Wrapper {...{
+                label: 'Password',
+                validationState: 'success',
+                validationMessage: 'ok',
+                id: 'password-field'
+            }}>
+                <Password {...{
+                    id: 'password-field',
+                    validationState: 'error',
+                    value: this.state.password,
+                    onChange: (value)=>this.setState({password: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
+                }}/>
+            </Wrapper>
         </div>
     }
 }
