@@ -28,9 +28,9 @@ class Text extends React.Component {
         if (value === null) value = {path: ''};
 
         return <div className={"form-group"+(validationState ? (' has-'+validationState):'')}>
-            {label ? <label className="control-label" htmlFor={this.getId()}>{label}</label> : null}
+            {label ? <label className="control-label" htmlFor={this.id}>{label}</label> : null}
             <input
-                id={this.getId()}
+                id={this.id}
                 type="file"
                 value={value.path}
                 onChange={e=>onChange({path:e.target.value, file:e.target.files[0], files: e.target.files}, e)}
@@ -40,10 +40,6 @@ class Text extends React.Component {
             />
             {validationMessage ? <span className="help-block">{validationMessage}</span> : null}
         </div>
-    }
-
-    getId() {
-        return this.props.id || this.id;
     }
 }
 

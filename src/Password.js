@@ -40,10 +40,10 @@ class Password extends React.Component {
         display = display || this.state.display;
 
         return <div className={"form-group"+(validationState ? (' has-'+validationState):'')}>
-            {label ? <label className="control-label" htmlFor={this.getId()}>{label}</label> : null}
+            {label ? <label className="control-label" htmlFor={this.id}>{label}</label> : null}
             <div className="input-group">
                 <input
-                    id={this.getId()}
+                    id={this.id}
                     type={display==='show' ? 'text' : 'password'}
                     className="form-control"
                     value={value}
@@ -65,10 +65,6 @@ class Password extends React.Component {
 
     onToggleDisplay() {
         this.setState({display: this.state.display==='show'?'hide':'show'})
-    }
-
-    getId() {
-        return this.props.id || this.id;
     }
 }
 

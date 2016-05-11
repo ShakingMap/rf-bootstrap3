@@ -27,9 +27,9 @@ class Textarea extends React.Component {
         if (value === null) value = '';
 
         return <div className={"form-group"+(validationState ? (' has-'+validationState):'')}>
-            {label ? <label className="control-label" htmlFor={this.getId()}>{label}</label> : null}
+            {label ? <label className="control-label" htmlFor={this.id}>{label}</label> : null}
             <textarea
-                id={this.getId()}
+                id={this.id}
                 className="form-control"
                 value={value}
                 onChange={e=>onChange(e.target.value, e)}
@@ -39,10 +39,6 @@ class Textarea extends React.Component {
             />
             {validationMessage ? <span className="help-block">{validationMessage}</span> : null}
         </div>
-    }
-
-    getId() {
-        return this.props.id || this.id;
     }
 }
 

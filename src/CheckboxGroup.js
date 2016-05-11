@@ -28,7 +28,7 @@ class CheckboxGroup extends React.Component {
         if (!items) items = {};
 
         return <div className={"form-group"+(validationState ? (' has-'+validationState):'')}>
-            {label ? <label className="control-label" htmlFor={this.getId()}>{label}</label> : null}
+            {label ? <label className="control-label">{label}</label> : null}
             {inline ? <br/> : null}
             {
                 Object.keys(items).map((key, index)=> <div key={key} className={inline? 'checkbox-inline':'checkbox'}>
@@ -52,10 +52,6 @@ class CheckboxGroup extends React.Component {
             }
             {validationMessage ? <span className="help-block">{validationMessage}</span> : null}
         </div>
-    }
-
-    getId() {
-        return this.props.id || this.id;
     }
 }
 
