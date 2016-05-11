@@ -6,16 +6,18 @@ import ReactDOM from 'react-dom';
 import {
     Text,
     Password,
-    File
+    File,
+    Textarea
 } from '../lib';
 
 class TestPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: 'test text',
-            password: 'test password',
-            file: undefined
+            text: null,
+            password: null,
+            file: null,
+            textarea: null
         }
     }
 
@@ -41,6 +43,13 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 value: this.state.file,
                 onChange: (value)=> this.setState({file: value})
+            }}/>
+            <Textarea {...{
+                label: 'Textarea',
+                validationState: 'success',
+                validationMessage: 'ok',
+                value: this.state.textarea,
+                onChange: (value)=>this.setState({textarea: value})
             }}/>
         </div>
     }
