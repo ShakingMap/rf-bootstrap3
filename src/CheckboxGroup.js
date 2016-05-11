@@ -8,7 +8,7 @@ const propTypes = {
     onChange: React.PropTypes.func,
     readOnly: React.PropTypes.bool,
     disabled: React.PropTypes.bool,
-    
+
     items: React.PropTypes.object, // key:{label, disabled, readOnly}
     inline: React.PropTypes.bool
 

@@ -5,7 +5,7 @@ const propTypes = {
     label: React.PropTypes.string,
     validationState: React.PropTypes.any,
     validationMessage: React.PropTypes.string,
-    value: React.PropTypes.any,
+    value: React.PropTypes.string,
     onChange: React.PropTypes.func,
     readOnly: React.PropTypes.bool,
     disabled: React.PropTypes.bool
