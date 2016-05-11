@@ -5,7 +5,8 @@ import ReactDOM from 'react-dom';
 
 import {
     Text,
-    Password
+    Password,
+    File
 } from '../lib';
 
 class TestPage extends React.Component {
@@ -13,7 +14,8 @@ class TestPage extends React.Component {
         super(props);
         this.state = {
             text: 'test text',
-            password: 'test password'
+            password: 'test password',
+            file: undefined
         }
     }
 
@@ -32,6 +34,13 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 value: this.state.password,
                 onChange: (value)=>this.setState({password: value})
+            }}/>
+            <File {...{
+                label: 'File',
+                validationState: 'success',
+                validationMessage: 'ok',
+                value: this.state.file,
+                onChange: (value)=> this.setState({file: value})
             }}/>
         </div>
     }
