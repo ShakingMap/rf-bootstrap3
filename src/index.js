@@ -1,4 +1,5 @@
 export const Wrapper = require('./Wrapper').default;
+export const Input = require('./Input').default;
 export const Text = require('./Text').default;
 export const Password = require('./Password').default;
 export const File = require('./File').default;
@@ -10,6 +11,7 @@ export const Number = require('./Number').default;
 
 export default {
     Wrapper,
+    Input,
     Text,
     Password,
     File,

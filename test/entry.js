@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 
 import {
     Wrapper,
+    Input,
     Text,
     Password,
     File,
