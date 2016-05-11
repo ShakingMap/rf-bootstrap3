@@ -56,6 +56,21 @@ class TestPage extends React.Component {
                     //onChange: (value)=>console.log(value)
                 }}/>
             </Wrapper>
+            <Wrapper {...{
+                label: 'Textarea',
+                validationState: 'success',
+                validationMessage: 'ok',
+                id: 'textarea-field'
+            }}>
+                <Textarea {...{
+                    id: 'textarea-field',
+                    validationState: 'error',
+                    value: this.state.textarea,
+                    onChange: (value)=>this.setState({textarea: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
+                }}/>
+            </Wrapper>
         </div>
     }
 }
