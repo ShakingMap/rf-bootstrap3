@@ -3,13 +3,17 @@ require('bootstrap/dist/css/bootstrap.css');
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {Text} from '../lib';
+import {
+    Text,
+    Password
+} from '../lib';
 
 class TestPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: 'test text'
+            text: 'test text',
+            password: 'test password'
         }
     }
 
@@ -21,6 +25,13 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 value: this.state.text,
                 onChange: (value)=>this.setState({text: value})
+            }}/>
+            <Password {...{
+                label: 'Password',
+                validationState: 'success',
+                validationMessage: 'ok',
+                value: this.state.password,
+                onChange: (value)=>this.setState({password: value})
             }}/>
         </div>
     }
