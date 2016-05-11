@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {
+    Wrapper,
     Text,
     Password,
     File,
@@ -25,42 +26,21 @@ class TestPage extends React.Component {
 
     render() {
         return <div>
-            <Text {...{
+            <Wrapper {...{
                 label: 'Text',
                 validationState: 'success',
                 validationMessage: 'ok',
-                value: this.state.text,
-                onChange: (value)=>this.setState({text: value})
-            }}/>
-            <Password {...{
-                label: 'Password',
-                validationState: 'success',
-                validationMessage: 'ok',
-                value: this.state.password,
-                onChange: (value)=>this.setState({password: value})
-            }}/>
-            <File {...{
-                label: 'File',
-                validationState: 'success',
-                validationMessage: 'ok',
-                value: this.state.file,
-                onChange: (value)=> this.setState({file: value})
-            }}/>
-            <Textarea {...{
-                label: 'Textarea',
-                validationState: 'success',
-                validationMessage: 'ok',
-                value: this.state.textarea,
-                onChange: (value)=>this.setState({textarea: value})
-            }}/>
-            <CheckboxGroup {...{
-                label: 'Checkbox Group',
-                validationState: 'success',
-                validationMessage: 'ok',
-                value: this.state.checkboxGroup,
-                onChange: (value)=>{console.log(value);this.setState({checkboxGroup: value})},
-                items: {a: {label: 'A'}, b: {label:'B'}, c:{label: 'C', disabled: true}, d:{label: 'D', readOnly: true}}
-            }}/>
+                id: 'text-field'
+            }}>
+                <Text {...{
+                    id: 'text-field',
+                    validationState: 'error',
+                    value: this.state.text,
+                    onChange: (value)=>this.setState({text: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
+                }}/>
+            </Wrapper>
         </div>
     }
 }

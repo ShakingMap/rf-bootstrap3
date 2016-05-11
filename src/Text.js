@@ -2,9 +2,8 @@ import React from 'react';
 import nid from 'nid';
 
 const propTypes = {
-    label: React.PropTypes.string,
     validationState: React.PropTypes.any,
-    validationMessage: React.PropTypes.string,
+    id: React.PropTypes.string,
     value: React.PropTypes.string,
     onChange: React.PropTypes.func,
     readOnly: React.PropTypes.bool,
@@ -18,18 +17,14 @@ const defaultProps = {
 };
 
 class Text extends React.Component {
-    componentWillMount() {
-        this.id = nid();
-    }
-
     render() {
-        let {label, validationState, validationMessage, value, onChange, readOnly, disabled, ...otherProps} = this.props;
+        let {validationState, id, value, onChange, readOnly, disabled, ...otherProps} = this.props;
+
         if (value === null) value = '';
 
-        return <div className={"form-group"+(validationState ? (' has-'+validationState):'')}>
-            {label ? <label className="control-label" htmlFor={this.id}>{label}</label> : null}
+        return <div className={validationState ? ('has-'+validationState):''}>
             <input
-                id={this.id}
+                id={id}
                 className="form-control"
                 value={value}
                 onChange={e=>onChange(e.target.value, e)}
@@ -37,7 +32,6 @@ class Text extends React.Component {
                 disabled={disabled}
                 {...otherProps}
             />
-            {validationMessage ? <span className="help-block">{validationMessage}</span> : null}
         </div>
     }
 }
