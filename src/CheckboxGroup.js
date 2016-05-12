@@ -1,18 +1,15 @@
 import React from 'react';
 
 const propTypes = {
-    label: React.PropTypes.string,
+    id: React.PropTypes.string,
     validationState: React.PropTypes.any,
-    validationMessage: React.PropTypes.string,
     value: React.PropTypes.arrayOf(React.PropTypes.string),
     onChange: React.PropTypes.func,
     readOnly: React.PropTypes.bool,
     disabled: React.PropTypes.bool,
 
-    items: React.PropTypes.object, // key:{label, disabled, readOnly}
+    items: React.PropTypes.object, // key:{label, readOnly, disabled}
     inline: React.PropTypes.bool
-
-    // other props will be passed down to inner input directly
 };
 
 const defaultProps = {
@@ -21,15 +18,14 @@ const defaultProps = {
 
 class CheckboxGroup extends React.Component {
     render() {
-        let {label, validationState, validationMessage, value, onChange, readOnly, disabled,
+        let {id, validationState, value, onChange, readOnly, disabled,
             items, inline,
             ...otherProps} = this.props;
+
         if (value === null) value = [];
         if (!items) items = {};
 
-        return <div className={"form-group"+(validationState ? (' has-'+validationState):'')}>
-            {label ? <label className="control-label">{label}</label> : null}
-            {inline ? <br/> : null}
+        return <div className={validationState ? ('has-'+validationState):''}>
             {
                 Object.keys(items).map((key, index)=> <div key={key} className={inline? 'checkbox-inline':'checkbox'}>
                     <label>
@@ -50,7 +46,6 @@ class CheckboxGroup extends React.Component {
                     </label>
                 </div>)
             }
-            {validationMessage ? <span className="help-block">{validationMessage}</span> : null}
         </div>
     }
 }

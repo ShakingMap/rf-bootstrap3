@@ -150,12 +150,35 @@ class TestPage extends React.Component {
                     id: 'checkbox-field',
                     validationState: 'error',
                     label: '?',
-                    //value: this.state.checkbox,
-                    //onChange: (value)=>this.setState({checkbox: value}),
-                    value: undefined,
-                    onChange: (value)=>console.log(value),
+                    value: this.state.checkbox,
+                    onChange: (value)=>this.setState({checkbox: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
                 }}/>
             </Wrapper>
+            <Wrapper {...{
+                label: 'Checkbox Group',
+                validationState: 'success',
+                validationMessage: 'ok',
+                id: 'checkbox-group-field'
+            }}>
+                <CheckboxGroup {...{
+                    id: 'checkbox-group-field',
+                    validationState: 'error',
+                    items: {
+                        a: {label: 'A'},
+                        b: {label: 'B'},
+                        c: {label: 'C', readOnly: true},
+                        d: {label: 'D', disabled: true}
+                    },
+                    inline: true,
+                    //value: this.state.checkboxGroup,
+                    //onChange: (value)=>this.setState({checkboxGroup: value})
+                    value: undefined,
+                    onChange: (value)=>console.log(value)
+                }}/>
+            </Wrapper>
+
         </div>
     }
 }
