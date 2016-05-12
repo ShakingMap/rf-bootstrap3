@@ -1,8 +1,8 @@
 {
   "name": "rf-bootstrap3",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "sr fields for bootstrap3.",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "node node_modules/webpack/bin/webpack.js --progress --colors --watch -d",
     "build": "node node_modules/babel-cli/bin/babel ./src --out-dir ./lib --source-maps",
