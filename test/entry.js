@@ -3,7 +3,7 @@ require('bootstrap/dist/css/bootstrap.css');
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {Wrapper, Group, fields} from '../lib';
+import {Wrapper, Group, Array, fields} from '../lib';
 
 class TestPage extends React.Component {
     constructor(props) {
@@ -271,6 +271,94 @@ class TestPage extends React.Component {
                         }}/>
                     </Wrapper>
                 </Group>
+            </Wrapper>
+            <Wrapper {...{
+                label: 'Array',
+                validationState: 'success',
+                validationMessage: 'ok'
+            }}>
+                <Array {...{
+                    onInsert: index=>console.log('insert at ' + index),
+                    onRemove: index=>console.log('remove at ' + index),
+                    onMove: (from, to)=>console.log(`move from ${from} to ${to}`)
+                }}>
+                    <Wrapper {...{
+                        label: 'Group',
+                        validationState: 'success',
+                        validationMessage: 'ok'
+                    }}>
+                        <Group>
+                            <Wrapper {...{
+                                label: 'Text',
+                                validationState: 'success',
+                                validationMessage: 'ok',
+                                id: 'text-field'
+                            }}>
+                                <fields.Text {...{
+                                    id: 'text-field',
+                                    validationState: 'error',
+                                    value: this.state.text,
+                                    onChange: (value)=>this.setState({text: value})
+                                    //value: undefined,
+                                    //onChange: (value)=>console.log(value)
+                                }}/>
+                            </Wrapper>
+                            <Wrapper {...{
+                                label: 'Password',
+                                validationState: 'success',
+                                validationMessage: 'ok',
+                                id: 'password-field'
+                            }}>
+                                <fields.Password {...{
+                                    id: 'password-field',
+                                    validationState: 'error',
+                                    value: this.state.password,
+                                    onChange: (value)=>this.setState({password: value})
+                                    //value: undefined,
+                                    //onChange: (value)=>console.log(value)
+                                }}/>
+                            </Wrapper>
+                        </Group>
+                    </Wrapper>
+                    <Wrapper {...{
+                        label: 'Group',
+                        validationState: 'success',
+                        validationMessage: 'ok'
+                    }}>
+                        <Group>
+                            <Wrapper {...{
+                                label: 'Text',
+                                validationState: 'success',
+                                validationMessage: 'ok',
+                                id: 'text-field'
+                            }}>
+                                <fields.Text {...{
+                                    id: 'text-field',
+                                    validationState: 'error',
+                                    value: this.state.text,
+                                    onChange: (value)=>this.setState({text: value})
+                                    //value: undefined,
+                                    //onChange: (value)=>console.log(value)
+                                }}/>
+                            </Wrapper>
+                            <Wrapper {...{
+                                label: 'Password',
+                                validationState: 'success',
+                                validationMessage: 'ok',
+                                id: 'password-field'
+                            }}>
+                                <fields.Password {...{
+                                    id: 'password-field',
+                                    validationState: 'error',
+                                    value: this.state.password,
+                                    onChange: (value)=>this.setState({password: value})
+                                    //value: undefined,
+                                    //onChange: (value)=>console.log(value)
+                                }}/>
+                            </Wrapper>
+                        </Group>
+                    </Wrapper>
+                </Array>
             </Wrapper>
         </div>
     }
