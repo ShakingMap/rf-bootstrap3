@@ -3,7 +3,7 @@ require('bootstrap/dist/css/bootstrap.css');
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {Wrapper, fields} from '../lib';
+import {Wrapper, Group, fields} from '../lib';
 
 class TestPage extends React.Component {
     constructor(props) {
@@ -233,6 +233,44 @@ class TestPage extends React.Component {
                     //value: undefined,
                     //onChange: (value)=>console.log(value)
                 }}/>
+            </Wrapper>
+            <Wrapper {...{
+                label: 'Group',
+                validationState: 'success',
+                validationMessage: 'ok'
+            }}>
+                <Group>
+                    <Wrapper {...{
+                        label: 'Text',
+                        validationState: 'success',
+                        validationMessage: 'ok',
+                        id: 'text-field'
+                    }}>
+                        <fields.Text {...{
+                            id: 'text-field',
+                            validationState: 'error',
+                            value: this.state.text,
+                            onChange: (value)=>this.setState({text: value})
+                            //value: undefined,
+                            //onChange: (value)=>console.log(value)
+                        }}/>
+                    </Wrapper>
+                    <Wrapper {...{
+                        label: 'Password',
+                        validationState: 'success',
+                        validationMessage: 'ok',
+                        id: 'password-field'
+                    }}>
+                        <fields.Password {...{
+                            id: 'password-field',
+                            validationState: 'error',
+                            value: this.state.password,
+                            onChange: (value)=>this.setState({password: value})
+                            //value: undefined,
+                            //onChange: (value)=>console.log(value)
+                        }}/>
+                    </Wrapper>
+                </Group>
             </Wrapper>
         </div>
     }
