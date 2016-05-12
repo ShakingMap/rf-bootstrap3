@@ -3,19 +3,7 @@ require('bootstrap/dist/css/bootstrap.css');
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {
-    Wrapper,
-    Input,
-    Text,
-    Password,
-    File,
-    Textarea,
-    CheckboxGroup,
-    Date as DateField,
-    DatetimeLocal,
-    Number as NumberField,
-    Checkbox
-} from '../lib';
+import {Wrapper, fields} from '../lib';
 
 class TestPage extends React.Component {
     constructor(props) {
@@ -41,7 +29,7 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 id: 'text-field'
             }}>
-                <Text {...{
+                <fields.Text {...{
                     id: 'text-field',
                     validationState: 'error',
                     value: this.state.text,
@@ -56,7 +44,7 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 id: 'password-field'
             }}>
-                <Password {...{
+                <fields.Password {...{
                     id: 'password-field',
                     validationState: 'error',
                     value: this.state.password,
@@ -71,7 +59,7 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 id: 'textarea-field'
             }}>
-                <Textarea {...{
+                <fields.Textarea {...{
                     id: 'textarea-field',
                     validationState: 'error',
                     value: this.state.textarea,
@@ -86,7 +74,7 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 id: 'file-field'
             }}>
-                <File {...{
+                <fields.File {...{
                     id: 'file-field',
                     validationState: 'error',
                     value: this.state.file,
@@ -101,7 +89,7 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 id: 'date-field'
             }}>
-                <DateField {...{
+                <fields.Date {...{
                     id: 'date-field',
                     validationState: 'error',
                     value: this.state.datefield,
@@ -116,7 +104,7 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 id: 'datetime-local-field'
             }}>
-                <DatetimeLocal {...{
+                <fields.DatetimeLocal {...{
                     id: 'datetime-local-field',
                     validationState: 'error',
                     value: this.state.datetimeLocal,
@@ -131,7 +119,7 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 id: 'number-field'
             }}>
-                <NumberField {...{
+                <fields.Number {...{
                     id: 'number-field',
                     validationState: 'error',
                     value: this.state.number,
@@ -146,7 +134,7 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 id: 'checkbox-field'
             }}>
-                <Checkbox {...{
+                <fields.Checkbox {...{
                     id: 'checkbox-field',
                     validationState: 'error',
                     label: '?',
@@ -162,7 +150,7 @@ class TestPage extends React.Component {
                 validationMessage: 'ok',
                 id: 'checkbox-group-field'
             }}>
-                <CheckboxGroup {...{
+                <fields.CheckboxGroup {...{
                     id: 'checkbox-group-field',
                     validationState: 'error',
                     items: {
