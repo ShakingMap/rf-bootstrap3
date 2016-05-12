@@ -13,7 +13,7 @@ class TestPage extends React.Component {
             password: null,
             file: null,
             textarea: null,
-            datefield: null,
+            date: null,
             datetimeLocal: null,
             number: null,
             checkbox: null,
@@ -95,8 +95,9 @@ class TestPage extends React.Component {
                 <fields.Date {...{
                     id: 'date-field',
                     validationState: 'error',
-                    value: this.state.datefield,
-                    onChange: (value)=>this.setState({datefield: value})
+                    display: 'utc',
+                    value: this.state.date,
+                    onChange: (value)=>this.setState({date: value}),
                     //value: undefined,
                     //onChange: (value)=>console.log(value)
                 }}/>
