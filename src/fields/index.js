@@ -9,3 +9,4 @@ export const DatetimeLocal = require('./DatetimeLocal').default;
 export const Number = require('./Number').default;
 export const Checkbox = require('./Checkbox').default;
 export const RadioGroup = require('./RadioGroup').default;
+export const Select = require('./Select').default;

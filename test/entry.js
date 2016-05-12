@@ -18,7 +18,8 @@ class TestPage extends React.Component {
             number: null,
             checkbox: null,
             checkboxGroup: null,
-            radioGroup: null
+            radioGroup: null,
+            select: null
         }
     }
 
@@ -185,6 +186,28 @@ class TestPage extends React.Component {
                     inline: true,
                     value: this.state.radioGroup,
                     onChange: (value)=>this.setState({radioGroup: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
+                }}/>
+            </Wrapper>
+            <Wrapper {...{
+                label: 'Select',
+                validationState: 'success',
+                validationMessage: 'ok',
+                id: 'select-field'
+            }}>
+                <fields.Select {...{
+                    id: 'select-field',
+                    validationState: 'error',
+                    items: {
+                        a: {label: 'A'},
+                        b: {label: 'B'},
+                        c: {label: 'C', readOnly: true},
+                        d: {label: 'D', disabled: true}
+                    },
+                    placeholder: '请选择',
+                    value: this.state.select,
+                    onChange: (value)=>this.setState({select: value})
                     //value: undefined,
                     //onChange: (value)=>console.log(value)
                 }}/>

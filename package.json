@@ -11,9 +11,6 @@
   },
   "author": "zhaoyao91 <zhaoyao91@163.com>",
   "license": "ISC",
-  "dependencies": {
-    "nid": "^0.3.2"
-  },
   "peerDependencies": {
     "react": ">=0.13.0"
   },
