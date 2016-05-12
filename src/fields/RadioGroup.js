@@ -17,6 +17,11 @@ const defaultProps = {
 };
 
 class RadioGroup extends React.Component {
+    constructor(props) {
+        super(props);
+        this.groupName = Math.random() + '';
+    }
+
     render() {
         let {id, validationState, value, onChange, readOnly, disabled,
             items, inline,
@@ -32,7 +37,7 @@ class RadioGroup extends React.Component {
                         <input
                             {...{
                                 ref: key,
-                                name: id,
+                                name: this.groupName,
                                 type: 'radio',
                                 checked: value === undefined ? undefined : value === key,
                                 disabled: items[key].disabled || disabled,
