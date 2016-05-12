@@ -17,7 +17,8 @@ class TestPage extends React.Component {
             datetimeLocal: null,
             number: null,
             checkbox: null,
-            checkboxGroup: null
+            checkboxGroup: null,
+            radioGroup: null
         }
     }
 
@@ -160,10 +161,32 @@ class TestPage extends React.Component {
                         d: {label: 'D', disabled: true}
                     },
                     inline: true,
-                    //value: this.state.checkboxGroup,
-                    //onChange: (value)=>this.setState({checkboxGroup: value})
-                    value: undefined,
-                    onChange: (value)=>console.log(value)
+                    value: this.state.checkboxGroup,
+                    onChange: (value)=>this.setState({checkboxGroup: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
+                }}/>
+            </Wrapper>
+            <Wrapper {...{
+                label: 'Radio Group',
+                validationState: 'success',
+                validationMessage: 'ok',
+                id: 'radio-group-field'
+            }}>
+                <fields.RadioGroup {...{
+                    id: 'radio-group-field',
+                    validationState: 'error',
+                    items: {
+                        a: {label: 'A'},
+                        b: {label: 'B'},
+                        c: {label: 'C', readOnly: true},
+                        d: {label: 'D', disabled: true}
+                    },
+                    inline: true,
+                    value: this.state.radioGroup,
+                    onChange: (value)=>this.setState({radioGroup: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
                 }}/>
             </Wrapper>
 
