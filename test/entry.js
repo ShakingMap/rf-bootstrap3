@@ -19,7 +19,8 @@ class TestPage extends React.Component {
             checkbox: null,
             checkboxGroup: null,
             radioGroup: null,
-            select: null
+            select: null,
+            multipleSelect: null
         }
     }
 
@@ -212,7 +213,27 @@ class TestPage extends React.Component {
                     //onChange: (value)=>console.log(value)
                 }}/>
             </Wrapper>
-
+            <Wrapper {...{
+                label: 'Multiple Select',
+                validationState: 'success',
+                validationMessage: 'ok',
+                id: 'multiple-select-field'
+            }}>
+                <fields.MultipleSelect {...{
+                    id: 'multiple-select-field',
+                    validationState: 'error',
+                    items: {
+                        a: {label: 'A'},
+                        b: {label: 'B'},
+                        c: {label: 'C', readOnly: true},
+                        d: {label: 'D', disabled: true}
+                    },
+                    value: this.state.multipleSelect,
+                    onChange: (value)=>this.setState({multipleSelect: value})
+                    //value: undefined,
+                    //onChange: (value)=>console.log(value)
+                }}/>
+            </Wrapper>
         </div>
     }
 }
