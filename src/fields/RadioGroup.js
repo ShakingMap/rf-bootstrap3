@@ -13,7 +13,8 @@ const propTypes = {
 };
 
 const defaultProps = {
-    onChange(){}
+    onChange(){},
+    items: {}
 };
 
 class RadioGroup extends React.Component {
@@ -28,7 +29,6 @@ class RadioGroup extends React.Component {
             ...otherProps} = this.props;
 
         if (value === null) value = '';
-        if (!items) items = {};
 
         return <div className={validationState ? ('has-'+validationState):''}>
             {

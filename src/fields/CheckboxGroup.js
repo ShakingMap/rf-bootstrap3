@@ -13,7 +13,8 @@ const propTypes = {
 };
 
 const defaultProps = {
-    onChange(){}
+    onChange(){},
+    items: {}
 };
 
 class CheckboxGroup extends React.Component {
@@ -23,7 +24,6 @@ class CheckboxGroup extends React.Component {
             ...otherProps} = this.props;
 
         if (value === null) value = [];
-        if (!items) items = {};
 
         return <div className={validationState ? ('has-'+validationState):''}>
             {
