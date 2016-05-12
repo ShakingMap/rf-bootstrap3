@@ -8,6 +8,7 @@ export const CheckboxGroup = require('./CheckboxGroup').default;
 export const Date = require('./Date').default;
 export const DatetimeLocal = require('./DatetimeLocal').default;
 export const Number = require('./Number').default;
+export const Checkbox = require('./Checkbox').default;
 
 export default {
     Wrapper,
@@ -19,5 +20,6 @@ export default {
     CheckboxGroup,
     Date,
     DatetimeLocal,
-    Number
+    Number,
+    Checkbox
 }

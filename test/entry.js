@@ -13,7 +13,8 @@ import {
     CheckboxGroup,
     Date as DateField,
     DatetimeLocal,
-    Number as NumberField
+    Number as NumberField,
+    Checkbox
 } from '../lib';
 
 class TestPage extends React.Component {
@@ -27,6 +28,7 @@ class TestPage extends React.Component {
             datefield: null,
             datetimeLocal: null,
             number: null,
+            checkbox: null,
             checkboxGroup: null
         }
     }
@@ -138,7 +140,22 @@ class TestPage extends React.Component {
                     //onChange: (value)=>console.log(value)
                 }}/>
             </Wrapper>
-
+            <Wrapper {...{
+                label: 'Checkbox',
+                validationState: 'success',
+                validationMessage: 'ok',
+                id: 'checkbox-field'
+            }}>
+                <Checkbox {...{
+                    id: 'checkbox-field',
+                    validationState: 'error',
+                    label: '?',
+                    //value: this.state.checkbox,
+                    //onChange: (value)=>this.setState({checkbox: value}),
+                    value: undefined,
+                    onChange: (value)=>console.log(value),
+                }}/>
+            </Wrapper>
         </div>
     }
 }
