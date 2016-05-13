@@ -10,10 +10,15 @@ const propTypes = {
 class Wrapper extends React.Component {
     render() {
         const {label, validationState, validationMessage, id, children} = this.props;
-        return <div className={"form-group"+(validationState ? (' has-'+validationState):'')}>
-            {label ? <label className="control-label" htmlFor={id}>{label}</label> : null}
+        const validationClass = validationState ? (' has-' + validationState) : '';
+        return <div>
+            {label ? <div className={validationClass}>
+                <label className="control-label" htmlFor={id}>{label}</label>
+            </div> : null}
             {children}
-            {validationMessage ? <span className="help-block">{validationMessage}</span> : null}
+            {label ? <div className={validationClass}>
+                <span className="help-block">{validationMessage}</span>
+            </div> : null}
         </div>
     }
 }
