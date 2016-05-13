@@ -42,26 +42,32 @@ class Array extends React.Component {
                 <div className="array-actions" style={{marginBottom: '10px'}}>
                     {
                         !disabled ?
-                            !editMode ? [
-                                <button key={0} type="button" style={{marginRight: '10px'}}
-                                        className="btn btn-primary"
-                                        onClick={()=>this.setState({editMode: 'add'})}>
+                            !children.length ?
+                                <button type="button" className="btn btn-primary" onClick={()=>onInsert(0)}>
                                     <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                </button>,
-                                <button key={1} type="button" style={{marginRight: '10px'}} className="btn btn-primary"
-                                        onClick={()=>this.setState({editMode: 'remove'})}>
-                                    <span className="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                                </button>,
-                                <button key={2} type="button" className="btn btn-primary"
-                                        onClick={()=>this.setState({editMode: 'move'})}>
-                                    <span className="glyphicon glyphicon-move" aria-hidden="true"></span>
                                 </button>
-                            ]
                                 :
-                                <button type="button" className="btn btn-primary"
-                                        onClick={()=>this.setState({editMode: null})}>
-                                    <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                </button>
+                                !editMode ? [
+                                    <button key={0} type="button" style={{marginRight: '10px'}}
+                                            className="btn btn-primary"
+                                            onClick={()=>this.setState({editMode: 'add'})}>
+                                        <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    </button>,
+                                    <button key={1} type="button" style={{marginRight: '10px'}}
+                                            className="btn btn-primary"
+                                            onClick={()=>this.setState({editMode: 'remove'})}>
+                                        <span className="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                                    </button>,
+                                    <button key={2} type="button" className="btn btn-primary"
+                                            onClick={()=>this.setState({editMode: 'move'})}>
+                                        <span className="glyphicon glyphicon-move" aria-hidden="true"></span>
+                                    </button>
+                                ]
+                                    :
+                                    <button type="button" className="btn btn-primary"
+                                            onClick={()=>this.setState({editMode: null})}>
+                                        <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                    </button>
                             :
                             null
                     }
@@ -124,5 +130,6 @@ const ArrayItemActions = ({children}) => {
         className: 'array-item-actions',
         style: {marginRight: '10px', display: 'flex', flexDirection: 'column'}
     }}>{children}</div>
-}
+};
+
 export default Array
