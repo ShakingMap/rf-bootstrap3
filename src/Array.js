@@ -121,4 +121,4 @@ class Array extends React.Component {
 Array.propTypes = propTypes;
 Array.defaultProps = defaultProps;
 
-export default Array
+module.exports = Array

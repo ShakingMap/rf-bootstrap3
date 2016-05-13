@@ -1,4 +1,6 @@
-export const Wrapper = require('./Wrapper').default;
-export const Group = require('./Group').default;
-export const Array = require('./Array').default;
-export const fields = require('./fields');
+module.exports = {
+    Wrapper: require('./Wrapper'),
+    Group: require('./Group'),
+    Array: require('./Array'),
+    fields: require('./fields')
+}

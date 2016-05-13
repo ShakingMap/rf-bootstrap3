@@ -20,4 +20,4 @@ class Wrapper extends React.Component {
 
 Wrapper.propTypes = propTypes;
 
-export default Wrapper
+module.exports = Wrapper

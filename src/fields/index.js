@@ -1,13 +1,15 @@
-export const Input = require('./Input').default;
-export const Text = require('./Text').default;
-export const Password = require('./Password').default;
-export const File = require('./File').default;
-export const Textarea = require('./Textarea').default;
-export const CheckboxGroup = require('./CheckboxGroup').default;
-export const Date = require('./Date').default;
-export const DatetimeLocal = require('./DatetimeLocal').default;
-export const Number = require('./Number').default;
-export const Checkbox = require('./Checkbox').default;
-export const RadioGroup = require('./RadioGroup').default;
-export const Select = require('./Select').default;
-export const MultipleSelect = require('./MultipleSelect').default;
+module.exports = {
+    Input: require('./Input'),
+    Text: require('./Text'),
+    Password: require('./Password'),
+    File: require('./File'),
+    Textarea: require('./Textarea'),
+    CheckboxGroup: require('./CheckboxGroup'),
+    Date: require('./Date'),
+    DatetimeLocal: require('./DatetimeLocal'),
+    Number: require('./Number'),
+    Checkbox: require('./Checkbox'),
+    RadioGroup: require('./RadioGroup'),
+    Select: require('./Select'),
+    MultipleSelect: require('./MultipleSelect')
+}
