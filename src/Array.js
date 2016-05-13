@@ -77,16 +77,16 @@ class Array extends React.Component {
                     <div style={{display: 'flex'}}>
                         {
                             !disabled && editMode === 'remove' ?
-                                <div className="array-item-actions" style={{marginRight: '10px'}}>
+                                <ArrayItemActions>
                                     <button type="button" className="btn btn-danger"
                                             onClick={()=>onRemove(index)}>
                                         <span className="glyphicon glyphicon-minus" aria-hidden="true"></span>
                                     </button>
-                                </div> : null
+                                </ArrayItemActions> : null
                         }
                         {
                             !disabled && editMode === 'move' ?
-                                <div className="array-item-actions" style={{marginRight: '10px'}}>
+                                <ArrayItemActions>
                                     <button key={0} type="button" className="btn btn-primary"
                                             style={{marginBottom: '10px'}}
                                             onClick={index > 0 ? ()=>onMove(index, index-1):null}>
@@ -98,12 +98,10 @@ class Array extends React.Component {
                                                 <span className="glyphicon glyphicon-arrow-down"
                                                       aria-hidden="true"></span>
                                     </button>
-                                </div> : null
+                                </ArrayItemActions> : null
                         }
-                        <div className="panel panel-default">
-                            <div className="panel-body">
-                                {child}
-                            </div>
+                        <div style={{width: '100%'}}>
+                            {child}
                         </div>
                     </div>
                 </div>)}
@@ -121,4 +119,10 @@ class Array extends React.Component {
 Array.propTypes = propTypes;
 Array.defaultProps = defaultProps;
 
+const ArrayItemActions = ({children}) => {
+    return <div {...{
+        className: 'array-item-actions',
+        style: {marginRight: '10px', display: 'flex', flexDirection: 'column'}
+    }}>{children}</div>
+}
 export default Array
