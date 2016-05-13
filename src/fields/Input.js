@@ -38,4 +38,4 @@ class Input extends React.Component {
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;
 
-module.exports = Input;
+export default Input;

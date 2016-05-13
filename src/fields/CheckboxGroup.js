@@ -53,4 +53,4 @@ class CheckboxGroup extends React.Component {
 CheckboxGroup.propTypes = propTypes;
 CheckboxGroup.defaultProps = defaultProps;
 
-module.exports = CheckboxGroup;
+export default CheckboxGroup;

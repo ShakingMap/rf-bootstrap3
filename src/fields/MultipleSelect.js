@@ -49,4 +49,4 @@ class Select extends React.Component {
 Select.propTypes = propTypes;
 Select.defaultProps = defaultProps;
 
-module.exports = Select;
+export default Select;

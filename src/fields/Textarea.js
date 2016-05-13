@@ -38,4 +38,4 @@ class Textarea extends React.Component {
 Textarea.propTypes = propTypes;
 Textarea.defaultProps = defaultProps;
 
-module.exports = Textarea;
+export default Textarea;

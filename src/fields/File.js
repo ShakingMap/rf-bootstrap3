@@ -39,4 +39,4 @@ class File extends React.Component {
 File.propTypes = propTypes;
 File.defaultProps = defaultProps;
 
-module.exports = File;
+export default File;

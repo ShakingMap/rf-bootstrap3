@@ -76,4 +76,4 @@ class DatetimeLocal extends React.Component {
 DatetimeLocal.propTypes = propTypes;
 DatetimeLocal.defaultProps = defaultProps;
 
-module.exports = DatetimeLocal;
+export default DatetimeLocal;

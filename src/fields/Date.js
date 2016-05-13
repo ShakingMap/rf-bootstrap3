@@ -77,4 +77,4 @@ DateField.propTypes = propTypes;
 DateField.defaultProps = defaultProps;
 DateField.displayName = 'Date';
 
-module.exports = DateField;
+export default DateField;

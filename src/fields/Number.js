@@ -38,4 +38,4 @@ NumberField.propTypes = propTypes;
 NumberField.defaultProps = defaultProps;
 NumberField.displayName = 'Number';
 
-module.exports = NumberField;
+export default NumberField;

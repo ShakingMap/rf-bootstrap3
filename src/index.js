@@ -1,6 +1,11 @@
+import Wrapper      from './Wrapper';
+import Group        from './Group';
+import Array        from './Array';
+import * as fields  from './fields';
+
 module.exports = {
-    Wrapper: require('./Wrapper'),
-    Group: require('./Group'),
-    Array: require('./Array'),
-    fields: require('./fields')
-}
+    Wrapper,
+    Group,
+    Array,
+    fields
+};

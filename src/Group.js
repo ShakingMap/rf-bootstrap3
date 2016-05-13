@@ -17,4 +17,4 @@ class Group extends React.Component {
 
 Group.propTypes = propTypes;
 
-module.exports = Group
+export default Group

@@ -38,4 +38,4 @@ class Text extends React.Component {
 Text.propTypes = propTypes;
 Text.defaultProps = defaultProps;
 
-module.exports = Text;
+export default Text;

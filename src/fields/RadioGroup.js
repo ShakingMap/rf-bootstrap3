@@ -56,4 +56,4 @@ class RadioGroup extends React.Component {
 RadioGroup.propTypes = propTypes;
 RadioGroup.defaultProps = defaultProps;
 
-module.exports = RadioGroup;
+export default RadioGroup;
