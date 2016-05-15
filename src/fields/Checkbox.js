@@ -28,7 +28,6 @@ class Checkbox extends React.Component {
         return <div className={'checkbox' + (validationState ? (' has-'+validationState):'')}>
             <label>
                 <input
-                    ref="input"
                     id={id}
                     type="checkbox"
                     checked={value}
