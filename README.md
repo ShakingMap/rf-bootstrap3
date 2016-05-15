@@ -3,6 +3,10 @@
 
 This docs list the components of this suit. refer to [rf-form](https://github.com/ShakingMap/rf-form#apis) to see default apis.
 
+## Installation
+- install bootstrap3 styles. this package is roughly tested with bootstrap 3.3.6
+- `npm install --save rf-bootstrap3`
+
 ## Components
 
 ### Wrapper
