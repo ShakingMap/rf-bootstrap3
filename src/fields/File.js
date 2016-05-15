@@ -20,7 +20,7 @@ class File extends React.Component {
         let {id, validationState, value, onChange, readOnly, disabled, ...otherProps} = this.props;
 
         if (value === undefined) value = {path: undefined};
-        if (value === null) value = {path: ''};
+        else if (value === null) value = {path: ''};
 
         return <div className={validationState ? ('has-'+validationState):''}>
             <input
