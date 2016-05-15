@@ -52,6 +52,7 @@ this is a general input field. all other props will be passed down to the inner 
 
 #### Checkbox
 - value - bool
+- label - string
 
 #### CheckboxGroup
 - value - array of string
