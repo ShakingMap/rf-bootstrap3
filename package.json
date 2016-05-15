@@ -1,7 +1,7 @@
 {
   "name": "rf-bootstrap3",
-  "version": "0.0.7",
-  "description": "sr fields for bootstrap3.",
+  "version": "0.1.0",
+  "description": "rf-form components suit for bootstrap3.",
   "main": "lib/index.js",
   "scripts": {
     "test": "node node_modules/webpack/bin/webpack.js --progress --colors --watch -d",
