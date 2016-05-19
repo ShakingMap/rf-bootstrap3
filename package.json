@@ -1,6 +1,6 @@
 {
   "name": "rf-bootstrap3",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "rf-form components suit for bootstrap3.",
   "main": "lib/index.js",
   "scripts": {
