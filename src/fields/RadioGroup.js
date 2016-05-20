@@ -55,7 +55,7 @@ RadioGroup.propTypes = propTypes;
 RadioGroup.defaultProps = defaultProps;
 RadioGroup.cleanValue = (value, {items})=> {
     if (value === undefined) return value;
-    else if (!!items[value]) return '';
+    else if (!items[value]) return '';
     else return value;
 };
 

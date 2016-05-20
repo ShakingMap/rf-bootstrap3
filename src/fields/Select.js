@@ -50,7 +50,7 @@ Select.propTypes = propTypes;
 Select.defaultProps = defaultProps;
 Select.cleanValue = (value, {items})=> {
     if (value === undefined) return value;
-    else if (!!items[value]) return '';
+    else if (!items[value]) return '';
     else return value;
 };
 
