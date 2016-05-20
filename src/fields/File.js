@@ -1,4 +1,5 @@
 import React from 'react';
+import {cleanValue} from 'rf-fields-utils';
 
 const propTypes = {
     id: React.PropTypes.string,
@@ -24,7 +25,7 @@ class File extends React.Component {
                 id={id}
                 type="file"
                 value={value.path}
-                onChange={e=>onChange({path:e.target.value, file:e.target.files[0], files: e.target.files}, e)}
+                onChange={e=>onChange(e.target.value ? {path:e.target.value, file:e.target.files[0], files: e.target.files}:{path:''}, e)}
                 readOnly={readOnly}
                 disabled={disabled}
                 {...otherProps}
@@ -35,10 +36,6 @@ class File extends React.Component {
 
 File.propTypes = propTypes;
 File.defaultProps = defaultProps;
-File.cleanValue = (value, options)=> {
-    if (value === undefined) return {path: undefined};
-    else if (!value || typeof value !== 'object' || typeof value.path !== 'string') return {path: ''};
-    else return value;
-};
+File.cleanValue = cleanValue.file;
 
 export default File;
