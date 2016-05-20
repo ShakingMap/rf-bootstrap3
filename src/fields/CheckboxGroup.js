@@ -19,11 +19,11 @@ const defaultProps = {
 
 class CheckboxGroup extends React.Component {
     render() {
-        let {id, validationState, value, onChange, readOnly, disabled,
+        let {
+            id, validationState, value, onChange, readOnly, disabled,
             items, inline,
-            ...otherProps} = this.props;
-
-        if (value === null) value = [];
+            ...otherProps
+        } = this.props;
 
         return <div className={validationState ? ('has-'+validationState):''}>
             {
@@ -52,5 +52,10 @@ class CheckboxGroup extends React.Component {
 
 CheckboxGroup.propTypes = propTypes;
 CheckboxGroup.defaultProps = defaultProps;
+CheckboxGroup.cleanValue = (value, {items}) => {
+    if (value === undefined) return value;
+    else if (!Array.isArray(value)) return [];
+    else return value.filter(key=>!!items[key])
+};
 
 export default CheckboxGroup;

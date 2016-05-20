@@ -28,8 +28,6 @@ class RadioGroup extends React.Component {
             items, inline,
             ...otherProps} = this.props;
 
-        if (value === null) value = '';
-
         return <div className={validationState ? ('has-'+validationState):''}>
             {
                 Object.keys(items).map((key, index)=> <div key={key} className={inline? 'radio-inline':'radio'}>
@@ -55,5 +53,10 @@ class RadioGroup extends React.Component {
 
 RadioGroup.propTypes = propTypes;
 RadioGroup.defaultProps = defaultProps;
+RadioGroup.cleanValue = (value, {items})=> {
+    if (value === undefined) return value;
+    else if (!!items[value]) return '';
+    else return value;
+};
 
 export default RadioGroup;

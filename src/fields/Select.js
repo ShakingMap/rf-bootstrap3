@@ -25,8 +25,6 @@ class Select extends React.Component {
             placeholder, items,
             ...otherProps} = this.props;
 
-        if (value === null) value = '';
-
         return <div className={validationState ? ('has-'+validationState):''}>
             <select {...{
                 className: "form-control",
@@ -50,5 +48,10 @@ class Select extends React.Component {
 
 Select.propTypes = propTypes;
 Select.defaultProps = defaultProps;
+Select.cleanValue = (value, {items})=> {
+    if (value === undefined) return value;
+    else if (!!items[value]) return '';
+    else return value;
+};
 
 export default Select;

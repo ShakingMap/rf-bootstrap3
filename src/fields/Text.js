@@ -19,8 +19,6 @@ class Text extends React.Component {
     render() {
         let {id, validationState, value, onChange, readOnly, disabled, ...otherProps} = this.props;
 
-        if (value === null) value = '';
-
         return <div className={validationState ? ('has-'+validationState):''}>
             <input
                 id={id}
@@ -37,5 +35,11 @@ class Text extends React.Component {
 
 Text.propTypes = propTypes;
 Text.defaultProps = defaultProps;
+Text.cleanValue = (value, options) => {
+    if (value === undefined) return value;
+    else if (value === null) return '';
+    else if (typeof value === 'string') return value;
+    else return String(value);
+};
 
 export default Text;

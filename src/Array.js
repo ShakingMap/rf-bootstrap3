@@ -81,6 +81,13 @@ class Array extends React.Component {
                     }
                     {child}
                 </div>)}
+                {
+                    !disabled && updating ?
+                        <button type="button" className="btn btn-primary"
+                                onClick={()=>onInsert(children.length)}>
+                            <span className="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button> : null
+                }
             </div>
         </div>
     }

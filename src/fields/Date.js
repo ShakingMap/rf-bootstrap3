@@ -21,9 +21,11 @@ const defaultProps = {
 
 class DateField extends React.Component {
     render() {
-        let {id, validationState, value, onChange, readOnly, disabled,
+        let {
+            id, validationState, value, onChange, readOnly, disabled,
             display,
-            ...otherProps} = this.props;
+            ...otherProps
+        } = this.props;
 
         return <div className={validationState ? ('has-'+validationState):''}>
             <input
@@ -76,5 +78,10 @@ class DateField extends React.Component {
 DateField.propTypes = propTypes;
 DateField.defaultProps = defaultProps;
 DateField.displayName = 'Date';
+DateField.cleanValue = (value, options)=> {
+    if (value === undefined) return value;
+    else if (value instanceof Date) return value;
+    else return null;
+};
 
 export default DateField;

@@ -19,9 +19,6 @@ class File extends React.Component {
     render() {
         let {id, validationState, value, onChange, readOnly, disabled, ...otherProps} = this.props;
 
-        if (value === undefined) value = {path: undefined};
-        else if (value === null) value = {path: ''};
-
         return <div className={validationState ? ('has-'+validationState):''}>
             <input
                 id={id}
@@ -38,5 +35,10 @@ class File extends React.Component {
 
 File.propTypes = propTypes;
 File.defaultProps = defaultProps;
+File.cleanValue = (value, options)=> {
+    if (value === undefined) return {path: undefined};
+    else if (!value || typeof value !== 'object' || typeof value.path !== 'string') return {path: ''};
+    else return value;
+};
 
 export default File;

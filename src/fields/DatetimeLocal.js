@@ -21,9 +21,11 @@ const defaultProps = {
 
 class DatetimeLocal extends React.Component {
     render() {
-        let {id, validationState, value, onChange, readOnly, disabled,
+        let {
+            id, validationState, value, onChange, readOnly, disabled,
             display,
-            ...otherProps} = this.props;
+            ...otherProps
+        } = this.props;
 
         return <div className={validationState ? ('has-'+validationState):''}>
             <input
@@ -75,5 +77,10 @@ class DatetimeLocal extends React.Component {
 
 DatetimeLocal.propTypes = propTypes;
 DatetimeLocal.defaultProps = defaultProps;
+DatetimeLocal.cleanValue = (value, options)=> {
+    if (value === undefined) return value;
+    else if (value instanceof Date) return value;
+    else return null;
+};
 
 export default DatetimeLocal;

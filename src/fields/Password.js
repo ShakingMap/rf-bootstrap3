@@ -26,11 +26,12 @@ class Password extends React.Component {
     }
 
     render() {
-        let {id, validationState, value, onChange, readOnly, disabled,
+        let {
+            id, validationState, value, onChange, readOnly, disabled,
             display,
-            ...otherProps} = this.props;
+            ...otherProps
+        } = this.props;
 
-        if (value === null) value = '';
         display = display || this.state.display;
 
         return <div className={'input-group' + (validationState ? (' has-'+validationState):'')}>
@@ -60,5 +61,11 @@ class Password extends React.Component {
 
 Password.propTypes = propTypes;
 Password.defaultProps = defaultProps;
+Password.cleanValue = (value, options) => {
+    if (value === undefined) return value;
+    else if (value === null) return '';
+    else if (typeof value === 'string') return value;
+    else return String(value);
+};
 
 export default Password;

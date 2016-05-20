@@ -19,11 +19,11 @@ const defaultProps = {
 
 class Checkbox extends React.Component {
     render() {
-        let {id, validationState, value, onChange, readOnly, disabled,
+        let {
+            id, validationState, value, onChange, readOnly, disabled,
             label,
-            ...otherProps} = this.props;
-
-        if (value === null) value = false;
+            ...otherProps
+        } = this.props;
 
         return <div className={'checkbox' + (validationState ? (' has-'+validationState):'')}>
             <label>
@@ -44,5 +44,7 @@ class Checkbox extends React.Component {
 
 Checkbox.propTypes = propTypes;
 Checkbox.defaultProps = defaultProps;
+Checkbox.cleanValue = (value, options) => value === undefined ? value : !!value;
+
 
 export default Checkbox;
