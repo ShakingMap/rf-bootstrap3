@@ -8,7 +8,7 @@ const propTypes = {
     readOnly: React.PropTypes.bool,
     disabled: React.PropTypes.bool,
 
-    items: React.PropTypes.object, // key:{label, readOnly, disabled}
+    items: React.PropTypes.object, // key:{label, readOnly, disabled} | key:label
     inline: React.PropTypes.bool
 };
 
@@ -24,6 +24,12 @@ class CheckboxGroup extends React.Component {
             items, inline,
             ...otherProps
         } = this.props;
+
+        const validItems = {};
+        Object.keys(items).forEach(key=> {
+            validItems[key] = typeof items[key] === 'object' ?  items[key] : {label: items[key]}
+        });
+        items = validItems;
 
         return <div className={validationState ? ('has-'+validationState):''}>
             {

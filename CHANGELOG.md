@@ -1,3 +1,6 @@
+## 0.3.0
+- support simpler items options for CheckboxGroup, RadioGroup, Select, MultipleSelect
+
 ## 0.2.1
 - fix clean value bugs of radio-group and select
 

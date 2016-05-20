@@ -9,7 +9,7 @@ const propTypes = {
     disabled: React.PropTypes.bool,
 
     placeholder: React.PropTypes.string,
-    items: React.PropTypes.object // key:{label, readOnly, disabled}
+    items: React.PropTypes.object // key:{label, readOnly, disabled} | key:label
 };
 
 const defaultProps = {
@@ -25,6 +25,12 @@ class Select extends React.Component {
             placeholder, items,
             ...otherProps} = this.props;
 
+        const validItems = {};
+        Object.keys(items).forEach(key=> {
+            validItems[key] = typeof items[key] === 'object' ?  items[key] : {label: items[key]}
+        });
+        items = validItems;
+        
         return <div className={validationState ? ('has-'+validationState):''}>
             <select {...{
                 className: "form-control",

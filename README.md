@@ -56,22 +56,22 @@ this is a general input field. all other props will be passed down to the inner 
 
 #### CheckboxGroup
 - value - array of string
-- items - object as {key: {label, readOnly, disabled}}, each key is for one item
+- items - object as {key: {label, readOnly, disabled}} or {key:label}, each key is for one item
 - inline - bool. if true, display as inline style
 
 #### RadioGroup
 - value - string
-- items - object as {key: {label, readOnly, disabled}}, each key is for one item
+- items - object as {key: {label, readOnly, disabled}} or {key:label}, each key is for one item
 - inline - bool. if true, display as inline style
 
 #### Select
 - value - string
-- items - object as {key: {label, readOnly, disabled}}, each key is for one item
+- items - object as {key: {label, readOnly, disabled}} or {key:label}, each key is for one item
 - placeholder - bool. if true, display as inline style
 
 #### MultipleSelect
 - value - array of string
-- items - object as {key: {label, readOnly, disabled}}, each key is for one item
+- items - object as {key: {label, readOnly, disabled}} or {key:label}, each key is for one item
 
 ## License
 ISC
