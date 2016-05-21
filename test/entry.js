@@ -9,18 +9,18 @@ class TestPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: null,
-            password: null,
-            file: null,
-            textarea: null,
+            text: '',
+            password: '',
+            file: {path:''},
+            textarea: '',
             date: null,
             datetimeLocal: null,
             number: null,
-            checkbox: null,
-            checkboxGroup: null,
-            radioGroup: null,
-            select: null,
-            multipleSelect: null
+            checkbox: false,
+            checkboxGroup: [],
+            radioGroup: '',
+            select: '',
+            multipleSelect: []
         }
     }
 
@@ -80,8 +80,12 @@ class TestPage extends React.Component {
                 <fields.File {...{
                     id: 'file-field',
                     validationState: 'error',
+                    enablePreview: true,
                     value: this.state.file,
-                    onChange: (value)=>this.setState({file: value})
+                    onChange: (value)=>{
+                        this.setState({file: value});
+                        console.log(value);
+                    }
                     //value: undefined,
                     //onChange: (value)=>console.log(value)
                 }}/>
