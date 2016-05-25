@@ -16,7 +16,8 @@
     "url": "git+https://github.com/ShakingMap/rf-bootstrap3.git"
   },
   "dependencies": {
-    "moment": "^2.13.0"
+    "moment": "^2.13.0",
+    "rf-fields-utils": "^0.2.1"
   },
   "peerDependencies": {
     "react": ">=0.13.0"

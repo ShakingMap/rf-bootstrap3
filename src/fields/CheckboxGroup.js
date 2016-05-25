@@ -1,4 +1,5 @@
 import React from 'react';
+import {cleanValue, formatItems} from 'rf-fields-utils';
 
 const propTypes = {
     id: React.PropTypes.string,
@@ -25,11 +26,7 @@ class CheckboxGroup extends React.Component {
             ...otherProps
         } = this.props;
 
-        const validItems = {};
-        Object.keys(items).forEach(key=> {
-            validItems[key] = typeof items[key] === 'object' ?  items[key] : {label: items[key]}
-        });
-        items = validItems;
+        items = formatItems(items);
 
         return <div className={validationState ? ('has-'+validationState):''}>
             {
@@ -39,12 +36,23 @@ class CheckboxGroup extends React.Component {
                             {...{
                                 ref: key,
                                 type: 'checkbox',
-                                checked: value === undefined ? undefined : value.indexOf(key) > -1,
+                                checked: value.indexOf(key) > -1,
                                 disabled: items[key].disabled || disabled,
                                 readOnly: items[key].readOnly || readOnly,
                                 onChange: e=> {
-                                    if (value === undefined) onChange(Object.keys(items).map((key)=>(this.refs[key] && this.refs[key].checked) ? key : null).filter(key=>key !== null), e)
-                                    else onChange(value.concat(key).filter(v=> v !== key || e.target.checked), e)
+                                    let newValue;
+                                    if (e.target.checked) {
+                                        if (value.includes(key)) newValue = value;
+                                        else newValue = value.concat(key);
+                                    }
+                                    else {
+                                        if (!value.includes(key)) newValue = value;
+                                        else {
+                                            const index = value.indexOf(key);
+                                            newValue = value.slice(0, index).concat(value.slice(index + 1));
+                                        }
+                                    }
+                                    onChange(newValue, e);
                                 }
                             }}
                         />
@@ -58,10 +66,6 @@ class CheckboxGroup extends React.Component {
 
 CheckboxGroup.propTypes = propTypes;
 CheckboxGroup.defaultProps = defaultProps;
-CheckboxGroup.cleanValue = (value, {items}) => {
-    if (value === undefined) return value;
-    else if (!Array.isArray(value)) return [];
-    else return value.filter(key=>!!items[key])
-};
+CheckboxGroup.cleanValue = cleanValue.manyOfItems;
 
 export default CheckboxGroup;
