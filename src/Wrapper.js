@@ -16,7 +16,7 @@ class Wrapper extends React.Component {
                 <label className="control-label" htmlFor={id}>{label}</label>
             </div> : null}
             {children}
-            {label ? <div className={validationClass}>
+            {validationMessage ? <div className={validationClass}>
                 <span className="help-block">{validationMessage}</span>
             </div> : null}
         </div>
